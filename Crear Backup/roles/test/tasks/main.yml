@@ -5,11 +5,11 @@
     state: stopped
   loop:
       - postgres
-      - awx_task
-      - awx_web
-      - epic_haibt
-      - memcached
-      - rabbitmq
+#      - awx_task
+#      - awx_web
+#      - epic_haibt
+#      - memcached
+#      - rabbitmq
   become: true
 #Genera el backup del pgdata actual a la carpeta /home/cchacoff/myplatform/RESPALDO
 - name: Take the backup of the database
