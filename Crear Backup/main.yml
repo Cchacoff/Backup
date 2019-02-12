@@ -1,7 +1,7 @@
 # LLamada de roles 
 
 - name: Realizar Backup
-  hosts: localhost
+  hosts: all
   user: cchacoff
    
   roles:
