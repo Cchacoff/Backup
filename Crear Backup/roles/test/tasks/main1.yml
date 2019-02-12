@@ -1,0 +1,4 @@
+#Envia el archivo de backup a la maquina de respaldo
+- name: Transfer file from ServerA to ServerB
+  shell: scp /var/lib/pgdocker/pgdata.gz cchacoff@192.168.100.215:/var/lib/pgdocker/
+

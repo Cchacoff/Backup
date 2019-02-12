@@ -1,0 +1,40 @@
+#Deten los containers
+- name: Stop containers
+  docker_container:
+    name: "{{ item }}"
+    state: stopped
+  loop:
+      - postgres
+      - awx_task
+      - awx_web
+      - epic_haibt
+      - memcached
+      - rabbitmq
+  become: true
+#Genera el backup del pgdata actual a la carpeta /home/cchacoff/myplatform/RESPALDO
+- name: Take the backup of the database
+  archive:
+     path: /var/lib/pgdocker/pgdata
+     dest: /home/cchacoff/myplatform/RESPALDO/pgdata.gz
+#     dest: /var/lib/pgdocker/pgdata-{{ ansible_date_time.iso8601_basic_short }}.gz (CON NOMBRE UNICO)
+  become: true
+
+#Inicia los containers
+- name: Start containers
+  docker_container:
+    name: "{{ item }}"
+    state: started
+  loop:
+      - postgres
+      - epic_haibt
+      - memcached
+      - rabbitmq
+      - awx_web
+      - awx_task
+  become: true
+#Envia el archivo de backup a la maquina de respaldo en la ubicacion /home/cchacoff
+- name: Transfer file from Node1 to Node2 
+  shell: rsync -e ssh -avhP /home/cchacoff/myplatform/RESPALDO/pgdata.gz  cchacoff@192.168.100.215:/home/cchacoff
+
+
+
