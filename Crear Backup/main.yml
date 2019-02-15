@@ -1,8 +1,8 @@
 # LLamada de roles 
 
 - name: Realizar Backup
-  hosts: all
-  user: cchacoff
+  hosts: localhost
+  user: root
    
   roles:
    - test
