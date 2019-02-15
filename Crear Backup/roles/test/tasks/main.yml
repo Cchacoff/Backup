@@ -15,7 +15,7 @@
 - name: Take the backup of the database
   archive:
      path: /var/lib/pgdocker/pgdata
-     dest: /home/cchacoff/myplatform/RESPALDO/pgdata.gz
+     dest: /root/Respaldo/pgdata.gz
 #     dest: /var/lib/pgdocker/pgdata-{{ ansible_date_time.iso8601_basic_short }}.gz (CON NOMBRE UNICO)
   become: true
 
@@ -34,7 +34,7 @@
   become: true
 #Envia el archivo de backup a la maquina de respaldo en la ubicacion /home/cchacoff
 - name: Transfer file from Node1 to Node2 
-  shell: rsync -e ssh -avhP /home/cchacoff/myplatform/RESPALDO/pgdata.gz  cchacoff@192.168.100.215:/home/cchacoff
+  shell: rsync -e ssh -avhP /root/Respaldo/pgdata.gz  root@tesladev2.neogistica.com:/root/RespaldosAWX
 
 
 
