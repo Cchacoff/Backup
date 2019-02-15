@@ -26,11 +26,11 @@
     state: started
   loop:
       - postgres
-      - epic_haibt
-      - memcached
-      - rabbitmq
-      - awx_web
-      - awx_task
+#      - epic_haibt
+#      - memcached
+#      - rabbitmq
+#      - awx_web
+#      - awx_task
   become: true
 #Envia el archivo de backup a la maquina de respaldo en la ubicacion /home/cchacoff
 - name: Transfer file from Node1 to Node2 
