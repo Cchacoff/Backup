@@ -1,0 +1,9 @@
+# LLamada de roles 
+
+- name: Realizar Backup
+  hosts: all	
+  user: cchacoff
+  become: true
+  
+  roles:
+   - test
