@@ -2,7 +2,7 @@
 
 - name: Realizar Backup
   hosts: all	
-  user: cchacoff
+  user: root
   
   roles:
    - test
