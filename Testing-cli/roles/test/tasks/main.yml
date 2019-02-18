@@ -1,3 +1,3 @@
 #Detener los contenedores 
-– name: Check espacio en disco
+- name: Mostrar espacio en disco
   shell: df -h
