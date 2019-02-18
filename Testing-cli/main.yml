@@ -1,8 +1,7 @@
 # LLamada de roles 
 
 - name: Realizar Backup
-  hosts: all	
-  user: root
+  hosts: all
   
   roles:
    - test
