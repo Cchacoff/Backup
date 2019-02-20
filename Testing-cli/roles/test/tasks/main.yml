@@ -1,3 +1,5 @@
 #Detener los contenedores 
-- name: Mostrar espacio en disco
-  shell: df -h
+#- name: Mostrar espacio en disco
+#  shell: df -h
+- name: Liberar memoria swap
+  shell: swapon --all
