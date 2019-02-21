@@ -2,6 +2,7 @@
 
 - name: Realizar Backup
   hosts: all
+  become: true
   
   roles:
    - test
