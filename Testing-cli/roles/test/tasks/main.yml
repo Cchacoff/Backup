@@ -2,4 +2,4 @@
 #- name: Mostrar espacio en disco
 #  shell: df -h
 - name: Liberar memoria swap
-  shell: sudo swapon --all
+  shell: swapon --all
