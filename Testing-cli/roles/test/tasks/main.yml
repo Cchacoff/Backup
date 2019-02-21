@@ -3,4 +3,3 @@
 #  shell: df -h
 - name: Liberar memoria swap
   shell: swapon --all
-  become: true
