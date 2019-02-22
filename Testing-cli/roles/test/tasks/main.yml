@@ -11,6 +11,6 @@
     server_url: "{{http://opszabbix.neogistica.com}}"
     login_user: "{{cchacoff}}"
     login_password: "{{n3ogistic4}}"
-    eventid: "{{ EVENT.ID}}"
+    eventid: "{{54321}}"
     message: "Remediation attempted via Ansible Playbook  ({{ ansible_date_time.date }}  {{ ansible_date_time.time }})"
     close_event: False
