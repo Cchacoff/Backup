@@ -5,7 +5,7 @@
   shell: swapon --all
   
 - name: Acknowledge alert
-    become: false
+  become: false
     local_action:
       module: zabbix_ack
       server_url: "{{http://opszabbix.neogistica.com}}"
