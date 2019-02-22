@@ -3,3 +3,14 @@
 #  shell: df -h
 - name: Liberar memoria swap
   shell: swapon --all
+  
+- name: Acknowledge alert
+    become: false
+    local_action:
+      module: zabbix_ack
+      server_url: "{{http://opszabbix.neogistica.com}}"
+      login_user: "{{cchacoff}}"
+      login_password: "{{n3ogistic4}}"
+      eventid: "{{ EVENT.ID}}"
+      message: "Remediation attempted via Ansible Playbook  ({{ ansible_date_time.date }}  {{ ansible_date_time.time }})"
+      close_event: False
