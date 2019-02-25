@@ -108,7 +108,7 @@ def main():
             server_url=dict(type='str', required=True, aliases=['url']),
             login_user=dict(type='str', required=True),
             login_password=dict(type='str', required=True, no_log=True),
-            eventid=dict(type='str', required=True),
+            eventid=dict(type='int', required=True),
             message=dict(type='str', required=True),
             close_event=dict(type='bool', required=False, default=False),
             timeout=dict(type='int', default=10)
